@@ -39,7 +39,7 @@ def track(draw, xy, text, font, fill, gap=6):
 
 track(d, (404, 378), "EAST / WEST INK", latin, CYAN, 5)
 d.text((404, 424), "21 ORIGINAL WORKS · 2026", font=latin_s, fill=(242, 234, 217))
-d.text((404, 462), "ORIGINAL $1,000   ·   DIGITAL $9.90", font=mono, fill=PINK)
+d.text((404, 462), "ORIGINAL $1,000-1,200  ·  DIGITAL $9.90", font=mono, fill=PINK)
 
 d.line([(78, 548), (400, 548)], fill=(242, 234, 217, 60), width=1)
 d.text((78, 560), "zixiu.homes", font=mono, fill=(242, 234, 217))

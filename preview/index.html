@@ -12,14 +12,14 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="十友齋 · ZIXIU">
 <meta property="og:title" content="十友齋 ZIXIU — East / West Ink">
-<meta property="og:description" content="21 original ink works, 2026. 原作 $1,000 · 電子版 $9.90.">
+<meta property="og:description" content="21 original ink works, 2026. 原作 $1,000–1,200 · 電子版 $9.90.">
 <meta property="og:url" content="https://zixiu.homes/">
 <meta property="og:image" content="https://zixiu.homes/assets/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="十友齋 ZIXIU — East / West Ink">
-<meta name="twitter:description" content="21 original ink works, 2026. Original $1,000 · Digital $9.90.">
+<meta name="twitter:description" content="21 original ink works, 2026. Original $1,000–1,200 · Digital $9.90.">
 <meta name="twitter:image" content="https://zixiu.homes/assets/og.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -416,7 +416,7 @@
       <span class="lm"><span>Ink meets <em>air</em>.</span></span>
     </h1>
     <p class="hero__zh">東方遇西方　墨遇空氣</p>
-    <p class="hero__sub">21 originals · 2026 · $1,000 / $9.90</p>
+    <p class="hero__sub">21 originals · 2026 · $1,000–1,200 / $9.90</p>
   </div>
   <div class="hero__word">ZI<i>X</i>IU</div>
   <div class="hero__scroll"><span>scroll</span><i></i></div>
@@ -446,7 +446,7 @@
     <div class="series__head rv">
       <span class="series__no">i.</span>
       <h3>Portraits<small>人像</small></h3>
-      <span class="series__meta">15 works／件 · 8.5 × 20.5 cm</span>
+      <span class="series__meta">15 works／件 · 10 × 16.5 cm（No. 015：8.5 × 20.5 cm）</span>
     </div>
     <div class="works" id="grid-portrait"></div>
   </div>
@@ -489,7 +489,7 @@
         <div><span>Surface 紙張</span><span class="v2">Paper, unmounted<i>紙本，未裝裱</i></span></div>
         <div><span>Year 年份</span><span>2026</span></div>
         <div><span>Type 類型</span><span>Experimental · 實驗性</span></div>
-        <div><span>Size A 尺寸</span><span>8.5 × 20.5 cm</span></div>
+        <div><span>Size A 尺寸</span><span class="v2">10 × 16.5 cm<i>No. 015：8.5 × 20.5 cm</i></span></div>
         <div><span>Size B 尺寸</span><span>17.5 × 10.5 cm</span></div>
       </div>
 
@@ -500,9 +500,9 @@
   <div class="pricelist rv">
     <article>
       <p class="k">Original · 原作</p>
-      <b>$1,000</b>
-      <p>Unique piece on paper, with a certificate and the artist's seal. One buyer, one work.</p>
-      <p class="zh-note">紙上唯一一件，附證書與藝術家印章。一位買家，一件作品。</p>
+      <b>$1,000–1,200</b>
+      <p>Unique piece on paper, with a certificate and the artist's seal. One buyer, one work. Portraits $1,000 · Fish $1,200.</p>
+      <p class="zh-note">紙上唯一一件，附證書與藝術家印章。一位買家，一件作品。人像 $1,000，魚 $1,200。</p>
       <a class="btn" href="mailto:hello@zixiu.homes?subject=Original%20work%20enquiry">Reserve · 預留原作</a>
     </article>
     <article>
@@ -605,7 +605,7 @@
         <div><span>Type 類型</span><span>Experimental · 實驗性</span></div>
         <div><span>Size 尺寸</span><span id="mSize"></span></div>
       </div>
-      <div class="price"><b>$1,000</b><small>USD · original 原作, 1 of 1</small></div>
+      <div class="price"><b id="mPriceO">$1,000</b><small>USD · original 原作, 1 of 1</small></div>
       <div class="buy" style="margin-bottom:20px"><a class="btn" id="mBuyO" href="#">Buy original · 購買原作</a></div>
       <div class="price"><b>$9.90</b><small>USD · digital 電子版</small></div>
       <div class="buy"><a class="btn btn--ghost" id="mBuyD" href="#">Buy digital · 購買電子版</a></div>
@@ -634,7 +634,10 @@
     box.querySelectorAll("[data-pending]").forEach(a => a.addEventListener("click", e => e.preventDefault()));
   });
 
-  const SIZES = { portrait: "8.5 × 20.5 cm", fish: "17.5 × 10.5 cm" };
+  const SIZES = { portrait: "10 × 16.5 cm", fish: "17.5 × 10.5 cm" };
+  const sizeOf = w => w.n === "015" ? "8.5 × 20.5 cm" : SIZES[w.s];
+  const priceOf = w => w.s === "fish" ? "$1,200" : "$1,000";
+  const amountOf = (w, original) => !original ? "9.90" : w.s === "fish" ? "1,200" : "1,000";
   const WORKS = [
     {n:"001", en:"Blue Shadow",   zh:"藍影", s:"portrait", r:0.718, d:"A face half-swallowed by blue hair, a rust-red wall behind.", z:"藍髮吞掉半張臉，背後一道赭紅的牆。"},
     {n:"002", en:"Yellow Room",   zh:"黃室", s:"portrait", r:0.748, d:"A profile set against one yellow rectangle — the plainest possible light.", z:"側臉對著一個黃色方塊，最簡單的一種光。"},
@@ -669,7 +672,7 @@
       <div class="card__body">
         <span class="card__n">No. ${w.n}</span>
         <p class="card__t">${w.en}<small>${w.zh}</small></p>
-        <div class="card__meta"><span class="card__e">${SIZES[w.s]}</span><span class="card__p">$1,000</span></div>
+        <div class="card__meta"><span class="card__e">${sizeOf(w)}</span><span class="card__p">${priceOf(w)}</span></div>
       </div>
     </article>`;
 
@@ -680,7 +683,7 @@
   const money = (w, kind) => {
     const original = kind === "original";
     const subject = `${original ? "Original" : "Digital edition"} — No. ${w.n} ${w.en}`;
-    const body = `Hello, I would like to buy the ${original ? "original" : "digital edition"} of No. ${w.n} "${w.en}" (${w.zh}), $${original ? "1,000" : "9.90"} USD.\n\nName:\nShipping address:\n`;
+    const body = `Hello, I would like to buy the ${original ? "original" : "digital edition"} of No. ${w.n} "${w.en}" (${w.zh}), $${amountOf(w, original)} USD.\n\nName:\nShipping address:\n`;
     return `mailto:hello@zixiu.homes?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
@@ -692,7 +695,8 @@
     document.getElementById("mZh").textContent = w.zh;
     document.getElementById("mDesc").textContent = w.d;
     document.getElementById("mDescZh").textContent = w.z;
-    document.getElementById("mSize").textContent = SIZES[w.s];
+    document.getElementById("mSize").textContent = sizeOf(w);
+    document.getElementById("mPriceO").textContent = priceOf(w);
     document.getElementById("mBuyO").href = money(w, "original");
     document.getElementById("mBuyD").href = money(w, "digital");
     modal.classList.add("open");
