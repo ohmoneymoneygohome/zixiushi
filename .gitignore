@@ -1,0 +1,12 @@
+# 交付目录之外的开发/参考文件，不入库、也不进部署产物
+/build/
+/.screenshots/
+/.trae-html-share-packages/
+/assets/
+/作品/
+/参考.mht
+/logo.jpg
+
+# preview 里的临时截图与草稿，不部署
+/preview/_*
+/preview/作品总览_21件.jpg
