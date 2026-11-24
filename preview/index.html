@@ -336,7 +336,8 @@
   .swatch{padding:clamp(22px,4vw,46px);min-height:150px;display:flex;flex-direction:column;justify-content:space-between;gap:22px;box-shadow:inset 0 0 0 1px rgba(242,234,217,.16)}
   .swatch__chip{width:46px;height:46px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(255,255,255,.25)}
   .swatch__info{display:flex;justify-content:space-between;align-items:baseline;font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase}
-  .swatch__name{font-family:var(--han);letter-spacing:.24em;font-size:13px}
+  .swatch__name{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase}
+  .swatch__name i{display:block;font-style:normal;font-family:var(--han);font-size:12px;letter-spacing:.2em;text-transform:none;margin-top:4px;opacity:.72}
 
   /* ---------- footer ---------- */
   footer{background:var(--ink);padding:clamp(52px,8vw,96px) var(--pad) 34px;border-top:1px solid var(--line)}
@@ -549,15 +550,15 @@
   <div class="palette rv">
     <div class="swatch" style="background:var(--navy)">
       <div class="swatch__chip" style="background:var(--navy);box-shadow:inset 0 0 0 1px rgba(242,234,217,.35)"></div>
-      <div class="swatch__info"><span class="swatch__name">夜藍 基底</span><span>#11264F</span></div>
+      <div class="swatch__info"><span class="swatch__name">Midnight Blue<i>夜藍 · 基底</i></span><span>#11264F</span></div>
     </div>
     <div class="swatch" style="background:var(--pink)">
       <div class="swatch__chip" style="background:var(--pink)"></div>
-      <div class="swatch__info" style="color:var(--navy)"><span class="swatch__name">絳粉 強調</span><span>#F58F98</span></div>
+      <div class="swatch__info" style="color:var(--navy)"><span class="swatch__name">Crimson Pink<i>絳粉 · 強調</i></span><span>#F58F98</span></div>
     </div>
     <div class="swatch" style="background:var(--cyan)">
       <div class="swatch__chip" style="background:var(--cyan)"></div>
-      <div class="swatch__info" style="color:var(--navy)"><span class="swatch__name">石青 點綴</span><span>#009AD6</span></div>
+      <div class="swatch__info" style="color:var(--navy)"><span class="swatch__name">Mineral Cyan<i>石青 · 點綴</i></span><span>#009AD6</span></div>
     </div>
   </div>
 </section>
